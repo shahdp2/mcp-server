@@ -1,0 +1,12 @@
+{
+    "servers": {
+        "my-mcp-server": {
+            "command": "dotnet",
+            "args": [
+                "run",
+                "--project",
+                "/Users/deepshah/Desktop/MCP/my.mcp.server/my.mcp.server.csproj"
+            ]
+        }
+    }
+}
