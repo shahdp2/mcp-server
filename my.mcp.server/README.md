@@ -1,5 +1,5 @@
 # MCP Server
-A Model Context Protocol (MCP) server for the Globomantics HR domain, built with C# and .NET 10.
+A Model Context Protocol (MCP) server for the HR domain, built with C# and .NET 10.
 
 ## Features
 
