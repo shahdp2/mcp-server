@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
+  "description": "A Globomantics HR MCP Server built following the Pluralsight MCP in Practice course",
+  "name": "io.github.shahdp2/globomantics-mcp-server",
+  "version": "0.1.0-beta",
+  "packages": [
+    {
+      "registryType": "nuget",
+      "identifier": "DeepShah.Globomantics.Mcp.Server",
+      "version": "0.1.0-beta",
+      "transport": {
+        "type": "stdio"
+      },
+      "packageArguments": [],
+      "environmentVariables": []
+    }
+  ],
+  "repository": {
+    "url": "https://github.com/shahdp2/globomantics-mcp-server",
+    "source": "github"
+  }
+}
