@@ -19,7 +19,7 @@ builder.Services.AddSingleton<IHrmDocumentService, MockHrmDocumentService>();
 builder.Services.AddMcpServer()
     .WithStdioServerTransport()
     .WithToolsFromAssembly()
-    .WithResourcesFromAssembly()
+    .WithResourcesFromAssembly()    
     .WithPromptsFromAssembly();
 
 var app = builder.Build();

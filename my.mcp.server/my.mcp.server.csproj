@@ -20,7 +20,7 @@
     <PackageType>McpServer</PackageType>
     <PublishSelfContained>true</PublishSelfContained>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageId>DeepShah.Globomantics.Mcp.Server</PackageId>
+    <PackageId>DeepShah.Mcp.Server</PackageId>
     <PackageVersion>0.1.0-beta</PackageVersion>
     <PackageTags>AI; MCP; server; stdio; hr</PackageTags>
     <Description>A Globomantics HR MCP Server built following the Pluralsight MCP in Practice course</Description>
