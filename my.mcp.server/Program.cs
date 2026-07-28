@@ -1,27 +1,29 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using my.mcp.server.Calender;
+﻿using my.mcp.server.Calender;
 using my.mcp.server.Document;
 
-var builder = Host.CreateEmptyApplicationBuilder(settings: null);
 
-builder.Logging.ClearProviders();
-builder.Logging.AddConsole(consoleLogOptions =>
-{
-    consoleLogOptions.LogToStandardErrorThreshold = LogLevel.Trace;
-});
+var builder = WebApplication.CreateBuilder(args);
 
 // Register mock services for DI
 builder.Services.AddSingleton<IHrmAbsenceApi, MockHrmAbsenceApi>();
 builder.Services.AddSingleton<IHrmDocumentService, MockHrmDocumentService>();
 
 builder.Services.AddMcpServer()
-    .WithStdioServerTransport()
+    .WithHttpTransport(options =>
+    {
+        options.Stateless = true;
+    })
     .WithToolsFromAssembly()
-    .WithResourcesFromAssembly()    
+    .WithResourcesFromAssembly()
     .WithPromptsFromAssembly();
 
 var app = builder.Build();
 
-await app.RunAsync();
+
+// Health check endpoint
+app.MapGet("/health", () => "OK");
+
+// MCP endpoint
+app.MapMcp("/mcp");
+
+app.Run();
